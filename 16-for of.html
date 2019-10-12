@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .completed{
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>Go to Store</li>
+    <li>Watch TV</li>
+    <li>Go Shopping</li>
+  </ul>
+  <script>
+
+    const fruits = ['Apple', 'Banana', 'Orange', 'Mango'];
+    // fruits.forEach(fruit =>{ 不可以用breal和cont
+    //   // if(fruit === 'Orange'){
+    //   //   some();
+    //   // }
+    //   console.log(fruit);
+    // })
+
+    // for(let index in fruits){ 可枚举属性 ，原型和属性的值都会被遍历
+    //   console.log(fruits);
+    // }
+
+    // for(let fruit of fruits.entries()){
+    //   if(fruit === 'Orange'){
+    //     // break; 终止
+    //     continue; //跳过
+    //   }
+    //   console.log(fruit);
+    // }
+
+    // for (let [index, fruit] of fruits.entries()) {
+    //   console.log(`${fruit} ranks ${index + 1} is my favourite fruit. `)
+    // }
+
+
+
+    //for of 遍历字符串
+    // let name = 'PowerDai';
+    // for (let arr of name) {
+    //   console.log(arr);
+    // }
+
+    const lis = document.querySelectorAll('li');
+    for (let li of lis) {
+    console.log(li);
+
+      li.addEventListener('click', function() {
+        this.classList.toggle('completed');
+      })
+    }
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const PowerDai = {
+      name: 'PowerDai',
+      date: '2019-07-28',
+      todos: [
+        { name: 'GO to Store', completed: false },
+        { name: 'Watch Movie', completed: true },
+        { name: 'Running', completed: true }
+      ]
+    }
+
+    const template =
+      `
+    <div>${PowerDai.name}</div>
+    <ul>
+        ${PowerDai.todos.map(todo => `
+        <li>
+        ${todo.name} ${todo.completed ? '✅':'❌'} 
+        </li>
+        `).join('')}
+    </ul>
+    <div>${PowerDai.date}</div>
+
+    `
+
+    document.body.innerHTML = template;
+  </script>
+</body>
+
+</html>

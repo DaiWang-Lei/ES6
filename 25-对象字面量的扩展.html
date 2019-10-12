@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>对象字面量的扩展</title>
+</head>
+
+<body>
+  <script>
+    const name = 'PowerDai';
+    const age = 18;
+    const birthday = '1111-11-11';
+
+    const PowerDai = {
+      name,
+      age,
+      birthday,
+      greet() {
+        alert(`Hello ${this.name}`);
+      },
+      getName(){
+
+      },
+      getAge(){
+
+      }
+    }
+    PowerDai.greet();
+    console.log(PowerDai);
+
+    let id = 0;
+    const userIds={
+      [`user-${++id}`]:id,
+      [`user-${++id}`]:id,
+      [`user-${++id}`]:id
+
+    }
+    console.log(userIds);
+
+
+    const keys = ['name','age','birthday'];
+    const values = ['PowerDai',18,'1111-11-11'];
+    const PowerDaiNa = {
+      [keys.shift()]: values.shift(),
+      [keys.shift()]: values.shift(),
+      [keys.shift()]: values.shift()
+    }
+    console.log(PowerDaiNa);
+  </script>
+</body>
+
+</html>

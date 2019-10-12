@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>symbol</title>
+</head>
+
+<body>
+  <script src="app.js"></script>
+  <script>
+    const classRoom = {
+      [Symbol('Lily')]: { grade: 60, age: 18 },
+      [Symbol('DaiWang')]: { grade: 100, age: 18 },
+      [Symbol('DaiWang')]: { grade: 99, age: 18 }
+    }
+    for(let key in classRoom){
+      console.log(key);
+    }
+  </script>
+</body>
+
+</html>

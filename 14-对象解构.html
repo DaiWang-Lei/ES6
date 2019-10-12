@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>对象解构</title>
+</head>
+<body>
+  <script>
+    const Jvs = {
+      name : 'Jvs Stark',
+      age : 18,
+      family: {
+        mother: 'black Stark',
+        father: 'toni Stark',
+        borther: 'green Stark'
+      },
+    }
+    const { name, age} = Jvs;
+    console.log(name + ' '+ age);
+    const { father:f,mother:m,borther:b} = Jvs.family;
+    console.log(f);
+    console.log(m);
+    console.log(b);
+
+  </script>
+</body>
+</html>

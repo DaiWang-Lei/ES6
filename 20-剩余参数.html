@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>剩余参数</title>
+</head>
+
+<body>
+  <script>
+    function sum(...num) {
+      return num.reduce((prev, curr) => prev + curr, 0)
+    }
+    console.log(sum(1, 2, 3));
+    console.log(sum(1, 2, 3, 4, 4));
+
+    const player = ['PowerDai', 123, 5.4, 6.43, 54.35];
+    const [name, id, ...scores] = player;
+    console.log(name,id,scores);
+  </script>
+</body>
+
+</html>

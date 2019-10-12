@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>新增的字符串函数</title>
+</head>
+
+<body>
+  <script>
+    const id = '6105822008070404040x';
+    const fan = ' I Love Laravist.';
+    const heading = `${`=`.repeat(5)} ${fan} ${'='.repeat(5)}`;
+    function padder(str, len = 25) {
+      return `${' '.repeat(Math.max(len - str.length,0))}${str}`
+    }
+    console.log(padder(id)) ;
+    console.log(padder(fan) );
+
+    //.startsWith()
+
+    //.endsWith()
+
+    //.includes() fan.indexOf('Laravist') !== -1; 返回值会true，表示包含这个字符； 
+
+    //.repeat()
+  </script>
+</body>
+
+</html>

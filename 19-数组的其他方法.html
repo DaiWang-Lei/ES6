@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组的其他方法</title>
+</head>
+
+<body>
+  <script>
+    const inventory = [
+      { name: 'apple', quantity: 2 },
+      { name: 'banana', quantity: 0 },
+      { name: 'cherries', quantity: 5 }
+    ];
+
+    // const banana = inventory.find(fruit => {
+    //   console.log(fruit);
+    //   if(fruit.name === 'banana'){
+    //     return true;
+    //   }
+    //   return false;
+    // });
+
+    //find()
+    const banana = inventory.find(fruit => fruit.name === 'banana')
+
+    console.log(banana);
+
+    //findIndex()
+    const bananaIndex = inventory.findIndex(fruit => { 
+      if(fruit.name === 'banana'){
+        return true;
+      }
+      return false;
+    })
+    console.log(bananaIndex);
+
+    //some() //寻找其中一个满足
+    // 返回布尔值
+    const isEnough = inventory.some(fruit => fruit.quantity > 0);
+    console.log(isEnough);
+
+    //every()
+    //所有的都满足,当有一个元素不满足时，立即返回false，而不执行下面当语句
+    const isAllEnough = inventory.every(fruit => fruit.quantity > 0);
+    console.log(isAllEnough);
+  </script>
+</body>
+
+</html>

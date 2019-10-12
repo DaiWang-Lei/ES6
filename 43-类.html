@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    class Animal {
+      constructor(name) {
+        this.name = name;
+        this.belly = [];
+      }
+      eat(food) {
+        this.belly.push(food);
+      }
+      speak() {
+        console.log(`I'm ${this.name}`);
+      }
+    }
+    class Dog extends Animal {
+      constructor(pros, age) {
+        super(pros);
+        this.age = age;
+      }
+      bark() {
+        console.log(`Barl bark!`)
+      }
+      speak() {
+        console.log(`I'm  bark,bark! ${this.name}`);
+      }
+    }
+    const lucky = new Dog('lucky', 2);
+
+  </script>
+</body>
+
+</html>

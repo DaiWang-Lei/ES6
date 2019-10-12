@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>from()和阵列</title>
+</head>
+
+<body>
+  <ul>
+    <li>Go to Store</li>
+    <li>Watch TV</li>
+    <li>Go Shopping</li>
+  </ul>
+  <script>
+    const todos = document.querySelectorAll('li');
+    const todosArr = Array.from(todos);
+    const name = todosArr.map(todo => todo.textContent);
+    console.log(name);
+
+
+    const news = Array.from(todos, todo => todo.textContent);
+    console.log(news);
+
+    function sum() {
+      return Array.from(arguments).reduce((prev,curr) => prev + curr,0)
+    }
+
+    const web = "PowerDai";
+    console.log(Array.from(web)
+    )
+  </script>
+</body> 
+
+</html>
