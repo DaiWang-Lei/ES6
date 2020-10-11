@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function pickES5(obj) {
+            let res = {}
+            for (let i = 1; i < arguments.length; i++) {
+                console.log(arguments[i]);
+                res[arguments[i]] = obj[arguments[i]]
+            }
+            return res
+        }
+        let bookES5 = {
+            title: '爱你就像爱生命',
+            author: "王小波",
+            year: 2020
+        }
+        let bookDataES5 = pickES5(bookES5, 'title', 'author')
+        console.log(bookDataES5);
+
+        function pickES6(obj, ...args) {
+            let res = {}
+            for (let i = 0; i < args.length; i++) {
+                console.log(args);
+                res[args[i]] = obj[args[i]]
+            }
+            return res
+        }
+        let bookES6 = {
+            title: '活着',
+            author: "余华",
+            year: 2020
+        }
+        let bookDataES6 = pickES6(bookES6, 'year', 'author')
+        console.log(bookDataES6);
+    </script>
+</body>
+
+</html>
