@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 对象的方法
+        // is() ===
+        // 比较两个值是否严格相等 除了判断NaN好像没啥用。。。
+        console.log(Object.is(NaN,NaN));
+
+        // 对象的合并 浅拷贝
+        // **** assign() ****
+        // Object.assign(targetObj,obj1,obj2,...)
+        let newObj = Object.assign({},{a:2},{b:3})
+        console.log(newObj);
+    </script>
+</body>
+
+</html>
