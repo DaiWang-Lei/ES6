@@ -40,6 +40,112 @@
         }
         let bookDataES6 = pickES6(bookES6, 'year', 'author')
         console.log(bookDataES6);
+
+
+        // 扩展运算符
+        // 剩余运算符：把多个独立的合并到 一个数组
+        // 扩展运算符：将一个数组分割，并将各个项作为分离的参数传递个函数
+
+        // ES5
+        const maxNumES5 = Math.max(20, 40)
+        console.log(maxNumES5);
+
+        // ES5处理数组中的最大值，使用apply
+        const arr = [10, 20, 40, 50, 80, 100, 14]
+        console.log(`ES5------>${Math.max.apply(null, arr)}`);
+
+        // ES6扩展运算符
+        console.log(`ES6- ----->${Math.max(...arr)}`);
+
+        // ES5闭包
+        let fnES5 = (function () {
+            return function () {
+                console.log('Hello ES5');
+            }
+        })()
+        fnES5()
+
+        // ES6闭包
+        let fnES6 = (() => {
+            return () => {
+                console.log('Hello ES6');
+            }
+        })()
+        fnES6()
+
+
+        // 箭头函数没有this绑定
+        // es5中this指向：取决于调用该函数的上下文
+        // let pageHandleES5Err = {
+        //     id: 123,
+        //     init: function () {
+        //         document.addEventListener('click', function (e) {
+        //             // 这里的this指向的是document，但是document上并没有doSomeThings函数，
+        //             // 所以会报错
+        //             // Uncaught TypeError: this.doSomeThings is not a function
+        //             this.doSomeThings(e.type)
+        //         })
+        //     },
+        //     doSomeThings: function (type) {
+        //         console.log(`时间类型：${type}，当前id:${this.id}`);
+        //     }
+        // }
+        // pageHandleES5Err.init()
+
+        // ES5解决this方法
+        let pageHandleES5Suc = {
+            id: 'ES5',
+            init: function () {
+                document.addEventListener('click', function (e) {
+                    // 这里的this指向的是document，但是document上并没有doSomeThings函数，
+                    // 所以会报错
+                    // Uncaught TypeError: this.doSomeThings is not a function
+                    this.doSomeThings(e.type)
+                }.bind(this), false)
+            },
+            doSomeThings: function (type) {
+                console.log(`时间类型：${type}，当前id:${this.id}`);
+            }
+        }
+        pageHandleES5Suc.init()
+
+        // ES6方法
+        let pageHandleES6 = {
+            id: 'ES6',
+            // 如果把init改为箭头函数会报错，因为init就指向window了
+            // 定义方法的时候 ！！！！ 一定不要使用箭头函数！！！！
+            init: function () {
+                // 箭头函数没有this指向，箭头函数内部this值只能通过查找作用域链来确定
+                // 一旦使用箭头函数，当前就不存在作用域
+                document.addEventListener('click', (e) => {
+                    this.doSomeThings(e.type)
+                })
+            },
+            doSomeThings: function (type) {
+                console.log(`时间类型：${type}，当前id:${this.id}`);
+            }
+        }
+        pageHandleES6.init()
+
+        // 使用箭头函数的注意事项
+        // 1、使用箭头函数，函数内部没有arguments,但是可以使用...表示剩余参数
+        let getVal = (a, b, ...valu) => {
+            // Uncaught ReferenceError: arguments is not defined
+            // 使用箭头函数，没有作用域链了，所以此时的this指向的是window，但是window并没有arguments属性
+
+            // console.log(arguments);
+            return a + b
+        }
+        console.log(getVal(1, 33, 4, 4, 2, 3));
+
+        // 2、箭头函数不能使用new关键字来实例化对象
+        // 都有class了要什么自行车
+        // function函数，也是一个对象，但是箭头函数不是一个对象，可以算是一个语法糖
+        let Obj = () => {
+
+        }
+        // Uncaught TypeError: Obj is not a constructor
+        const obj1 = new Obj()
     </script>
 </body>
 
