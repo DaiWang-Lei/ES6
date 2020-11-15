@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迭代器的使用</title>
+</head>
+
+<body>
+    <script>
+
+        // Iterator
+        // 是一种新的遍历机制，两个核心
+        // 1、迭代器是一个接口，能快捷的访问数据，通过Symbol.iterator来创建迭代器
+        //          通过迭代器的next方法，获取迭代之后的结果
+        // 2、迭代器是用于遍历数据结构的指针
+
+        const items = ['one', 'two', 'three']
+        const item = items[Symbol.iterator]()
+        console.log(item.next());// {value: "one", done: false}
+
+        console.log(item.next());
+        console.log(item.next());
+        console.log(item.next());
+    </script>
+</body>
+
+</html>

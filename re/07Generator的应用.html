@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function loadUi() {
+            console.log('加载loading...页面')
+        }
+
+        function showData() {
+            setTimeout(() => {
+                console.log('数据加载完成');
+                itLoad.next()
+            }, 1500);
+        }
+
+        function hideUi() {
+            console.log('隐藏loading页面')
+        }
+
+        function* fun() {
+            loadUi()
+            yield showData()
+            hideUi()
+        }
+
+        const itLoad = fun()
+        itLoad.next()
+    </script>
+</body>
+
+</html>
