@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let set = new Set()
+        console.log(set);
+
+        // 添加元素
+        set.add(2)
+        set.add(4)
+        set.add('4')
+        set.add('three')
+
+        // 删除元素
+        set.delete(2)
+
+        // 校验某个值是否在set中
+        console.log(set.has('4'))
+        console.log(set.size)
+
+        // 1、set中对象的引用无法被释放
+        let set3 = new Set(),
+            obj = {}
+        set3.add(obj)
+        // 释放当前资源，这样是释放不掉的
+        obj = null
+        console.log({ set3 });
+
+        // 使用weakSet可以释放
+        let set4 = new WeakSet(), obj4 = {}
+
+        set4.add(obj4)
+        // 
+        obj4 = null;
+        console.log({ set4 });
+
+        // WeakSet
+        // 1、不能传入非对象类型的参数
+        // 2、不可迭代
+        // 3、没有forEach()
+        // 4、没有size属性
+
+
+
+    </script>
+</body>
+
+</html>
